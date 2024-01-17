@@ -1,0 +1,309 @@
+@extends('index')
+@section('content')
+
+<div class="container-fluid content p-5	">
+    <img id="gambarInteraktif" src="{{ asset('public/assets/Images/logo/Logo-PKKMB-650.png') }}" class="rounded" alt="...">
+</div>
+
+
+<div style="background-color: #3498db; padding: 20px; width:100vw">
+    <h5 class="fw-bold text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; font-size:80px; color: white;">
+        PKKMB
+        <span style="color: white;">
+            Politeknik Astra
+        </span>
+    </h5>
+</div>
+
+
+<div id="downloadButton" class="floating-element-button">
+    <i class="fa fa-book"></i>
+</div>
+
+
+<!-- <div class="floating-element left" id="leftFloatingElement"> -->
+<!-- Gambar di kiri -->
+<!-- <img src="/assets/Images/logo/Element-2-left.png" alt="Left Image"> -->
+<!-- </div> -->
+
+<!-- <div class="floating-element right" id="rightFloatingElement"> -->
+<!-- Gambar di kanan -->
+<!-- <img src="/assets/Images/logo/Element-2-right.png" alt="Right Image"> -->
+<!-- </div> -->
+
+
+<div class="water-container">
+    <div class="water">
+        <div class="wave"></div>
+        <div class="wave" style="animation-delay: 1s;"></div>
+        <div class="wave" style="animation-delay: 2s; opacity:80%;"></div>
+    </div>
+
+
+    <div class="container lazy-load">
+        <div class="container">
+            <div class="img-container mt-5">
+                <div class="img-fluid rounded-2 mb-2 imgWithShadow" style="width: 15rem;" id="gambarInteraktif">
+                    <img src="{{ asset('public/assets/Images/1.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="...">
+                </div>
+                <div class="img-fluid rounded-2 mb-2 imgWithShadow" style="width: 15rem;" id="gambarInteraktif">
+                    <img src="{{ asset('public/assets/Images/15.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="...">
+                </div>
+                <div class="img-fluid rounded-2 mb-2 imgWithShadow" style="width: 15rem;" id="gambarInteraktif">
+                    <img src="{{ asset('public/assets/Images/12.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="...">
+                </div>
+                <div class="img-fluid rounded-2 mb-2 imgWithShadow" style="width: 15rem;" id="gambarInteraktif">
+                    <img src="{{ asset('public/assets/Images/5.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container lazy-load">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm rounded-2 mb-2 imgWithShadow" id="gambarInteraktif-2">
+                    <img src="{{ asset('public/assets/Images/DAY-1.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="DAY-1">
+                </div>
+                <div class="col-sm rounded-2 mb-2 imgWithShadow" id="gambarInteraktif-2">
+                    <img src="{{ asset('public/assets/Images/DAY-2.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="DAY-2">
+                </div>
+                <div class="col-sm rounded-2 mb-2 imgWithShadow" id="gambarInteraktif-2">
+                    <img src="{{ asset('public/assets/Images/DAY-3.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="DAY-3">
+                </div>
+                <div class="col-sm  rounded-2 mb-2 imgWithShadow" id="gambarInteraktif-2">
+                    <img src="{{ asset('public/assets/Images/DAY-4.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="DAY-4">
+                </div>
+                <div class="col-sm  rounded-2 mb-2 imgWithShadow" id="gambarInteraktif-2">
+                    <img src="{{ asset('public/assets/Images/DAY-5.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="DAY-5">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex flex-row mt lazy-load">
+        <div class="img-fluid rounded-2 mb-2 imgWithShadow" style="width: 15rem;" id="gambarInteraktif">
+            <img src="{{ asset('public/assets/Images/18.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="...">
+        </div>
+        <div class="img-fluid rounded-2 mb-2 imgWithShadow" style="width: 15rem;" id="gambarInteraktif">
+            <img src="{{ asset('public/assets/Images/14.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="...">
+        </div>
+        <div class="img-fluid rounded-2 mb-2 imgWithShadow" style="width: 15rem;" id="gambarInteraktif">
+            <img src="{{ asset('public/assets/Images/8.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="...">
+        </div>
+        <div class="img-fluid rounded-2 mb-2 imgWithShadow" style="width: 15rem;" id="gambarInteraktif">
+            <img src="{{ asset('public/assets/Images/9.jpg') }}" class="img-fluid rounded-2 mb-5 imgWithShadow" alt="...">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container mb-5 mt-5" id="video-bg-container" style="background-color: white;">
+    <div class="loader" id="loader"></div>
+    <h5 class="fw-bold text-center my-3" style="font-family: 'Poppins', sans-serif; font-weight: bold; font-size:50px;">
+        <span style="color: #0059AB;">
+            AFTER MOVIE
+        </span>
+    </h5>
+    <video class="container d-flex mb-5" id="video-bg" muted loop>
+        <source src="{{ asset('public/assets/Content/AFTER-MOVIE-2023.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="controls" class="d-flex justify-content-center my-5 mt-3">
+        <div id="mute-toggle" class="btn btn-primary mr-2" onclick="toggleMute()" style="width: 40px; height: 40px; background: transparent; border: none;">
+            <i id="mute-icon" class="fas fa-volume-mute" style="font-size: 20px; color: white;"></i>
+        </div>
+        <div id="pause-toggle" class="btn btn-primary mr-2" onclick="togglePause()" style="width: 40px; height: 40px; background: transparent; border: none;">
+            <i id="pause-icon" class="fas fa-play" style="font-size: 20px; color: white;"></i>
+        </div>
+    </div>
+</div>
+
+
+<div id="notification-card" class="card mb-5 container" style="width: 18rem; position: fixed; bottom: 10px; right: 10px; display: none; transition: opacity 0.5s;">
+    <img class="card-img-top mt-3" src="/assets/Images/AFTER-MOVIE-TMB.jpg" alt="Card image cap" style="filter: sepia(1);">
+    <div class="card-body">
+        <h5 class="card-title">Instagram Post</h5>
+        <p class="card-text">After Movie Kegiatan PKKMB Politeknik Astra 2023.</p>
+        <a href="https://www.instagram.com/p/CxLNvFyinDA" target="_blank" class="btn btn-primary">Go to Instagram Post</a>
+        <button id="close-notification" onclick="closeNotification(event)" class="btn btn-light" style="position: absolute; top: 5px; right: 5px; cursor: pointer; font-size: 16px;">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+
+<div class="contact-section">
+
+    <div style="text-align: center;">
+        <img src="{{ asset('public/assets/Images/logo/Footer.png') }}" style="display: inline-block;" />
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var floatingButton = document.querySelector('.floating-element-button');
+
+        // Tambahkan kelas 'show' setelah DOM dimuat
+        floatingButton.classList.add('show');
+
+        // Tambahkan event listener untuk mengarahkan ke halaman dari repositori Anda saat tombol di klik
+        floatingButton.addEventListener('click', function() {
+            // Gantilah nama file sesuai dengan file yang ingin Anda unduh
+            var fileName = 'Buku_Pedoman_Mahasiswa.pdf';
+
+            // Gantilah path sesuai dengan struktur folder di repositori lokal Anda
+            var repositoryPath = 'assets/';
+
+            // Buat URL lengkap untuk file yang akan diunduh
+            var downloadUrl = repositoryPath + fileName;
+
+            // Buat elemen <a> untuk mengunduh file
+            var downloadLink = document.createElement('a');
+            downloadLink.href = downloadUrl;
+            downloadLink.download = fileName;
+
+            // Simulasikan klik pada elemen <a> untuk memulai unduhan
+            downloadLink.click();
+        });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var leftFloatingElement = document.getElementById('leftFloatingElement');
+        var rightFloatingElement = document.getElementById('rightFloatingElement');
+
+        // Tampilkan elemen saat dokumen dimuat
+        leftFloatingElement.style.display = 'block';
+        rightFloatingElement.style.display = 'block';
+
+        // Tambahkan event listener untuk mendeteksi scroll
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY || window.pageYOffset;
+
+            // Tentukan kapan elemen harus fade out
+            if (scrollPosition > window.innerHeight) {
+                leftFloatingElement.style.animation = 'fadeOut 0.5s ease-in-out';
+                rightFloatingElement.style.animation = 'fadeOut 0.5s ease-in-out';
+
+                // Atur timeout untuk menghilangkan elemen setelah animasi fade out selesai
+                setTimeout(function() {
+                    leftFloatingElement.style.display = 'none';
+                    rightFloatingElement.style.display = 'none';
+                }, 500); // Ubah angka ini sesuai dengan durasi animasi fade out
+            }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var lazyLoadElements = document.querySelectorAll('.lazy-load');
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleLazyLoad() {
+            lazyLoadElements.forEach(function(element) {
+                if (isElementInViewport(element)) {
+                    element.style.opacity = 1;
+                    element.style.visibility = 'visible';
+                }
+            });
+        }
+
+        // Panggil fungsi saat halaman dimuat dan saat digulir
+        handleLazyLoad();
+        window.addEventListener('scroll', handleLazyLoad);
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var video = document.getElementById("video-bg");
+        var muteToggle = document.getElementById("mute-toggle");
+        var muteIcon = document.getElementById("mute-icon");
+        var pauseToggle = document.getElementById("pause-toggle");
+        var pauseIcon = document.getElementById("pause-icon");
+
+        muteToggle.addEventListener("click", function() {
+            toggleMute();
+        });
+
+        function toggleMute() {
+            video.muted = !video.muted;
+            updateMuteButton();
+        }
+
+        function updateMuteButton() {
+            if (video.muted) {
+                muteIcon.classList.remove("fa-volume-up");
+                muteIcon.classList.add("fa-volume-mute");
+            } else {
+                muteIcon.classList.remove("fa-volume-mute");
+                muteIcon.classList.add("fa-volume-up");
+            }
+        }
+
+        pauseToggle.addEventListener("click", function() {
+            togglePause();
+        });
+
+        function togglePause() {
+            if (video.paused) {
+                video.play();
+                updatePauseButton();
+            } else {
+                video.pause();
+                updatePauseButton();
+            }
+        }
+
+        function updatePauseButton() {
+            if (video.paused) {
+                pauseIcon.classList.remove("fa-pause");
+                pauseIcon.classList.add("fa-play");
+            } else {
+                pauseIcon.classList.remove("fa-play");
+                pauseIcon.classList.add("fa-pause");
+            }
+        }
+    });
+</script>
+
+<script>
+    var video = document.getElementById("video-bg");
+    var notificationCard = document.getElementById("notification-card");
+    var isCardShown = false;
+
+    video.addEventListener("timeupdate", function() {
+        if (video.currentTime >= 5 && !isCardShown) {
+            showNotificationCard();
+            isCardShown = true;
+        }
+    });
+
+    function showNotificationCard() {
+        notificationCard.style.display = "block"; // Set display to block
+        setTimeout(function() {
+            notificationCard.style.opacity = "1";
+        }, 10); // Delay setting opacity to ensure transition
+    }
+
+    function closeNotification(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        notificationCard.style.opacity = "0";
+        setTimeout(function() {
+            notificationCard.style.display = "none";
+        }, 500); // Delay hiding the card to allow transition
+    }
+</script>
+
+@endsection

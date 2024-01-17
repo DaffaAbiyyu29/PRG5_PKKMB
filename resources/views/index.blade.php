@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head runat="server">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MPB2J6QQ');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PKKMB Politeknik Astra</title>
+    <link rel="icon" href="{{ asset('public/assets/Images/logo/astratech.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('public/assets/Images/logo/astratech.ico') }}" />
+    <link href="{{ asset('public/assets/Plugins/MDB-Pro_4.14.1/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/Plugins/MDB-Pro_4.14.1/css/mdb.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/Plugins/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/Plugins/fontawesome-free-5.11.2-web/css/fontawesome.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/Plugins/fontawesome-free-5.11.2-web/css/solid.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/Plugins/fontawesome-free-5.11.2-web/css/regular.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/Plugins/fontawesome-free-5.11.2-web/css/brands.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/Content/themes/base/jquery-ui.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/Styles/Style.css') }}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script> -->
+    <link href="{{ asset('public/assets/datatables/datatables.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/datatables/datatables.min.css') }}" rel="stylesheet" />
+    <script src="{{ asset('public/assets/datatables/datatables.js') }}"></script>
+    <script src="{{ asset('public/assets/datatables/datatables.min.js') }}"></script>
+
+    <script src="{{ asset('public/assets/Scripts/jquery-ui-1.13.2.min.js') }}"></script>
+    <script src="{{ asset('public/assets/Plugins/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('public/assets/Plugins/fontawesome-free-5.11.2-web/js/fontawesome.min.js') }}"></script>
+    <script src="{{ asset('public/assets/Plugins/MDB-Pro_4.14.1/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/assets/Plugins/MDB-Pro_4.14.1/js/mdb.min.js') }}"></script>
+    <script src="{{ asset('public/assets/Plugins/Highcharts-7.2.1/code/highcharts.js') }}"></script>
+    <script src="{{ asset('public/assets/Plugins/Highcharts-7.2.1/code/highcharts-more.js') }}"></script>
+
+    <!-- <script src="//code.tidio.co/magv0uprt7k6dju3bbazrdhmbbcvo45a.js" async></script> -->
+    <script>
+        var jq = jQuery.noConflict();
+
+        function setTodayDateTime() {
+            var currentDate = new Date();
+
+            // Mendapatkan komponen tanggal dan waktu
+            var year = currentDate.getFullYear();
+            var month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Januari dimulai dari 0
+            var day = currentDate.getDate().toString().padStart(2, '0');
+            var hours = currentDate.getHours().toString().padStart(2, '0');
+            var minutes = currentDate.getMinutes().toString().padStart(2, '0');
+
+            // Format string sesuai dengan format input type="datetime-local"
+            return formattedDateTime = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+        }
+    </script>
+    <!-- <script type="text/javascript">
+        function sentValidation(input) {
+            $(input).addClass('disabled');
+            $(input).text('Mohon tunggu..');
+        }
+
+        $(function() {
+            $(".datepicker").pickadate({
+                monthsFull: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+                monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'],
+                weekdaysFull: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
+                weekdaysShort: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
+                today: 'Hari Ini',
+                clear: '',
+                close: 'Tutup',
+                labelMonthNext: 'Bulan berikutnya',
+                labelMonthPrev: 'Bulan sebelumnya',
+                labelMonthSelect: 'Pilih bulan',
+                labelYearSelect: 'Pilih tahun',
+                format: 'yyyy-mm-dd',
+                closeOnSelect: false,
+                closeOnClear: false,
+                selectYears: 50,
+                max: new Date()
+            });
+        });
+    </script> -->
+    <style>
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table th {
+            text-align: center !important;
+            vertical-align: middle !important;
+            font-size: 17px;
+            white-space: nowrap;
+            font-weight: bold;
+            text-align: center;
+            background-color: #3A4584;
+            color: white;
+            height: 40px;
+        }
+
+        .scrollable-table {
+            overflow-x: auto;
+            /* Aktifkan scroll horizontal jika diperlukan */
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1" runat="server" enctype="multipart/form-data">
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPB2J6QQ" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <nav class="navbar navbar-expand-lg navbar-light light">
+            <a class="navbar-brand" style="padding: 5px 15px;" asp-controller="Home" asp-action="Index">
+                <img src="{{ asset('public/assets/Images/logo/astratech.png') }}" alt="Logo Politeknik Astra" style="height: 45px;" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+                <ul class="navbar-nav ml-auto">
+                    <!-- MAHASISWA BARU -->
+                    <li class="nav-item mr-3 mahasiswabaru">
+                        <a class="nav-link" style="font-weight: bold;" asp-controller="Informasi" asp-action="Index">Dashboard</a>
+                    <li class="nav-item dropdown mr-3 mahasiswabaru">
+                        <a class="nav-link dropdown-toggle" style="font-weight: bold;" id="navbarDropdownMenuLink-Informasi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informasi</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink-Informasi">
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="jadwal" asp-action="Index">Jadwal</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="tugas" asp-action="Index">Tugas</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="absensi" asp-action="Index">Absensi</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="JamPlusMinus" asp-action="Index">Jam Plus / Minus</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="sikap" asp-action="Index">Sikap</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="kelompok" asp-action="Index">Kelompok</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="ruangan" asp-action="Index">Ruangan</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mr-3 mahasiswabaru">
+                        <a class="nav-link" style="font-weight: bold;" asp-controller="mahasiswabaru" asp-action="evaluasi">Evaluasi</a>
+                    </li>
+                    <li class="nav-item mr-3 mahasiswabaru">
+                        <a class="nav-link" style="font-weight: bold;" asp-controller="kelulusan" asp-action="Index">Kelulusan</a>
+                    </li>
+                    <li class="nav-item dropdown mr-3 mahasiswabaru">
+                        <a class="nav-link dropdown-toggle" style="font-weight: bold;" id="navbarDropdownMenuLink-Informasi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hai, <span id="showUsernameMhs"></span> (<span id="showRoleMhs"></span>)</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink-Informasi">
+                            <a class="hovercolor" style="font-weight: bold;" href="../Akun/Ubah/@ViewBag.UserId">Ubah Akun</a>
+                            <a class="nav-link font-weight-bold waves-effect waves-light white-text rounded-3" style="padding: 8px 15px; background-color: #ed302f;" onclick="logout(event)"><b style="font-weight: bold;">Logout</b></a>
+                        </div>
+                    </li>
+                    <!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+                    <!-- Panitia Kesekretariatan -->
+                    <li class="nav-item mr-3 panitiakesekretariatan">
+                        <a class="nav-link" style="font-weight: bold;" asp-controller="Informasi" asp-action="Index">Dashboard</a>
+                    <li class="nav-item dropdown mr-3 panitiakesekretariatan">
+                        <a class="nav-link dropdown-toggle" style="font-weight: bold;" id="navbarDropdownMenuLink-Informasi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informasi</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink-Informasi">
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="jadwal" asp-action="Index">Jadwal</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="kelompok" asp-action="Index">Kelompok</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="ruangan" asp-action="Index">Ruangan</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mr-3 panitiakesekretariatan">
+                        <a class="nav-link" style="font-weight: bold;" asp-controller="tugas" asp-action="Index">Tugas</a>
+                    </li>
+                    <li class="nav-item dropdown mr-3 panitiakesekretariatan">
+                        <a class="nav-link dropdown-toggle" style="font-weight: bold;" id="navbarDropdownMenuLink-Informasi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nilai</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink-Informasi">
+                            @*<a class="hovercolor" style="font-weight: bold;" asp-controller="tugas" asp-action="Index">Tugas</a>*@
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="sikap" asp-action="Index">Sikap</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="JamPlusMinus" asp-action="Index">Jam Plus / Minus</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="absensi" asp-action="Index">Absensi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mr-3 panitiakesekretariatan">
+                        <a class="nav-link" style="font-weight: bold;" asp-controller="evaluasi" asp-action="Index">Evaluasi</a>
+                    </li>
+                    <li class="nav-item mr-3 panitiakesekretariatan">
+                        <a class="nav-link" style="font-weight: bold;" asp-controller="kelulusan" asp-action="Index">Kelulusan</a>
+                    </li>
+                    <li class="nav-item dropdown mr-3 panitiakesekretariatan">
+                        <a class="nav-link dropdown-toggle" style="font-weight: bold;" id="navbarDropdownMenuLink-Informasi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hai, <span id="showUsernameKsk"></span> (<span id="showRoleKsk"></span>)</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink-Informasi">
+                            <a class="hovercolor" style="font-weight: bold;" href="../Akun/Ubah/@ViewBag.UserId">Ubah Akun</a>
+                            <a class="nav-link font-weight-bold waves-effect waves-light white-text rounded-3" style="padding: 8px 15px; background-color: #ed302f;" onclick="logout(event)"><b style="font-weight: bold;">Logout</b></a>
+                        </div>
+                    </li>
+                    <!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+                    <!-- PIC PKKMB -->
+                    <li class="nav-item mr-3 picpkkmb">
+                        <a class="nav-link" style="font-weight: bold;" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                    <li class="nav-item dropdown mr-3 picpkkmb">
+                        <a class="nav-link dropdown-toggle" style="font-weight: bold;" id="navbarDropdownMenuLink-Informasi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informasi</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink-Informasi">
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="Pkkmb" asp-action="Index">PKKMB</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="jadwal" asp-action="Index">Jadwal</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="kelompok" asp-action="Index">Kelompok</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="ruangan" asp-action="Index">Ruangan</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mr-3 picpkkmb">
+                        <a class="nav-link dropdown-toggle" style="font-weight: bold;" id="navbarDropdownMenuLink-Informasi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kesekretariatan</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink-Informasi">
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="panitiakesekretariatan" asp-action="Index">Daftar Panitia</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="panitiakesekretariatan" asp-action="verifikasiksk">Verifikasi Panitia</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mr-3 picpkkmb">
+                        <a class="nav-link dropdown-toggle" style="font-weight: bold;" id="navbarDropdownMenuLink-Informasi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mahasiswa Baru</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink-Informasi">
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="tugas" asp-action="Index">Tugas</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="absensi" asp-action="Index">Absensi</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="JamPlusMinus" asp-action="Index">Jam Plus / Minus</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="sikap" asp-action="Index">Sikap</a>
+                            <a class="hovercolor" style="font-weight: bold;" asp-controller="kelulusan" asp-action="Index">Kelulusan</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mr-3 picpkkmb">
+                        <a class="nav-link" style="font-weight: bold;" asp-controller="evaluasi" asp-action="Index">Evaluasi</a>
+                    </li>
+                    <li class="nav-item dropdown mr-3 picpkkmb">
+                        <a class="nav-link dropdown-toggle" style="font-weight: bold;" id="navbarDropdownMenuLink-Informasi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hai, <span id="showUsernamePic"></span> (<span id="showRolePic"></span>)</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink-Informasi">
+                            <a class="nav-link font-weight-bold waves-effect waves-light white-text rounded-3" style="padding: 8px 15px; background-color: #ed302f;" onclick="logout(event)"><b style="font-weight: bold;">Logout</b></a>
+                        </div>
+                    </li>
+                    <!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+                    <li class="nav-item mr-2 login">
+                        <a class="nav-link font-weight-bold waves-effect waves-light white-text rounded-3" asp-controller="akun" asp-action="login" style="padding: 8px 15px; background-color: #0059AB;"><b style="font-weight: bold;">Login</b></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid" style="padding-top: 50px;">
+            @yield('content')
+        </div>
+        <div class="footer">
+
+            <div class="row">
+                <div class="col-lg-4 socialmedia" style="padding: 20px 40px; text-align: left;">
+                    <h6 style="font-weight: bold; margin-bottom: 15px;">POLITEKNIK ASTRA</h6>
+                    <p>
+                        <b>Kampus Cikarang:</b><br />
+                        Jl. Gaharu Blok F-3 Delta Silicon 2 Lippo Cikarang, Kel. Cibatu, Kec. Cikarang Selatan, Bekasi, Jawa Barat 17530
+                    </p>
+                    <p>
+                        <b>Kampus Sunter:</b><br />
+                        Komplek PT Astra International Tbk. Gedung B, Jl. Gaya Motor Raya No. 8, Sunter II, Jakarta 14330
+                    </p>
+                </div>
+                <div class="col-lg-4 socialmedia" style="padding: 20px 40px; text-align: left;">
+                    <h6 style="font-weight: bold;">WAKTU LAYANAN</h6>
+                    <h6>Senin - Jumat (08:00 - 16:00 WIB)</h6>
+                    <br />
+                    <h6 style="font-weight: bold;">LINK CEPAT</h6>
+                    <a href="https://goo.gl/maps/5VCNFxoCRRUwBF547" style="text-decoration: none; color: white;" target="_blank">
+                        <h6>- Lokasi Kampus</h6>
+                    </a>
+                    <a href="https://sia.polytechnic.astra.ac.id" style="text-decoration: none; color: white;" target="_blank">
+                        <h6>- Sistem Informasi Akademik</h6>
+                    </a>
+                    <a href="Page_Login.aspx" style="text-decoration: none; color: white;" target="_blank">
+                        <h6>- Login Akun PMB</h6>
+                    </a>
+                </div>
+                <div class="col-lg-4 socialmedia" style="padding: 20px 40px; text-align: left;">
+                    <h6 style="margin-bottom: 20px;">
+                        <span style="font-weight: bold;">Telepon</span> : (021) 5022722<br />
+                        <span style="font-weight: bold;">Whatsapp</span> : 0812 9558 2134 (message only)<br />
+                        <span style="font-weight: bold;">Email</span> : pmb@polytechnic.astra.ac.id<br />
+                        <span style="font-weight: bold;">Website</span> : https://www.polytechnic.astra.ac.id
+                    </h6>
+                    <a class="btn-floating btn-md btn-ins" style="margin: 10px 5px;" role="button" onclick="window.open('https://www.instagram.com/astrapolytechnic/', '_blank');"><i class="fab fa-instagram"></i></a>
+                    <a class="btn-floating btn-md btn-yt" style="margin: 10px 5px;" role="button" onclick="window.open('https://www.youtube.com/c/PolmanAstrachannel', '_blank');"><i class="fab fa-youtube"></i></a>
+                    <a class="btn-floating btn-md btn-fb" style="margin: 10px 5px;" role="button" onclick="window.open('https://www.facebook.com/Astrapolytechnic/', '_blank');"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn-floating btn-md btn-tw" style="margin: 10px 5px;" role="button" onclick="window.open('https://twitter.com/PoliteknikAstra/', '_blank');"><i class="fab fa-twitter"></i></a>
+                    <a class="btn-floating btn-md btn-whatsapp" style="margin: 10px 5px;" role="button" onclick="window.open('https://api.whatsapp.com/send/?phone=6281295582134', '_blank');"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn-floating btn-md btn-vr" style="margin: 10px 5px;" role="button" onclick="window.open('https://virtual-tour.polytechnic.astra.ac.id/', '_blank');"><i class="fas fa-vr-cardboard"></i></a>
+                    <p class="mt-3 mb-0">&copy; {{ now()->year }} Politeknik Astra</p>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            getPkkmbAktif();
+            validate();
+        });
+
+        $('.nav-item').hide();
+        $('.nav-item.login').show();
+
+        var token = getCookie("token");
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var cookies = document.cookie.split(';');
+
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith(nameEQ)) {
+                    return cookie.substring(nameEQ.length, cookie.length);
+                }
+            }
+
+            return null;
+        }
+
+        function getPkkmbAktif() {
+            var hostname = "https://localhost:7087/"
+            var url = hostname + "GetPkkmbAktif"
+            var method = "GET"
+            var counter = 1;
+            var detailData = []
+
+            $.ajax({
+                url: url,
+                method: method,
+                contentType: "application/json",
+                success: function(data) {
+                    var item = data.data;
+                    sessionStorage.setItem('id_pkkmb', item.pkm_idPkkmb)
+                    sessionStorage.setItem('tahun_pkkmb', item.pkm_tahunPkkmb)
+                },
+                error: function(error) {
+                    console.log('Error fetching data:', error);
+                }
+            });
+        }
+
+        function validate() {
+            if (getCookie("token") != null) {
+                $.ajax({
+                    url: 'https://localhost:7087/ValidateToken',
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'token': token // Pass the token in the request headers
+                    },
+                    success: function(data) {
+                        var user = [];
+                        if (data.status === 200) {
+                            const decodedPayload = decodeJwt(token);
+                            if (decodedPayload.role == 'Mahasiswa') {
+                                $('.nav-item.mahasiswabaru').show();
+                                $('.nav-item.login').hide();
+                                var showUsernameMhs = document.getElementById('showUsernameMhs');
+                                showUsernameMhs.textContent = decodedPayload.name;
+                                var showRoleMhs = document.getElementById('showRoleMhs');
+                                showRoleMhs.textContent = decodedPayload.role;
+                            } else if (decodedPayload.role == 'Fasilitator' || decodedPayload.role == 'KSK') {
+                                $('.nav-item.panitiakesekretariatan').show();
+                                $('.nav-item.login').hide();
+                                var showUsernameKsk = document.getElementById('showUsernameKsk');
+                                showUsernameKsk.textContent = decodedPayload.name;
+                                var showRoleKsk = document.getElementById('showRoleKsk');
+                                showRoleKsk.textContent = decodedPayload.role;
+                            } else if (decodedPayload.role == 'PIC PKKMB') {
+                                $('.nav-item.picpkkmb').show();
+                                $('.nav-item.login').hide();
+                                var showUsernamePic = document.getElementById('showUsernamePic');
+                                showUsernamePic.textContent = decodedPayload.name;
+                                var showRolePic = document.getElementById('showRolePic');
+                                showRolePic.textContent = decodedPayload.role;
+                            }
+                        } else {
+                            deleteCookie('token');
+                        }
+                    },
+                    error: function(xhr, status) {
+                        deleteCookie('token');
+                    },
+                });
+            }
+        }
+
+        function decodeJwt(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+
+            return JSON.parse(jsonPayload);
+        }
+
+        function deleteCookie(name) {
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        }
+
+        function logout(event) {
+            event.preventDefault();
+            deleteCookie('token');
+            window.location.href = "https://localhost:7240/";
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Tentukan tinggi dari elemen navigasi
+            var navHeight = $('.navbar').outerHeight();
+
+            // Terapkan properti CSS position: sticky pada elemen navigasi
+            $('.navbar').css({
+                'position': 'sticky',
+                'top': '0',
+                'width': '100%',
+                'z-index': '1000',
+            });
+        });
+    </script>
+</body>
+
+</html>
